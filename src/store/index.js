@@ -1,11 +1,10 @@
 // Importe o método applyMiddleware
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from "redux";
 // Importe o redux-thunk
-import rootReducer from '../reducers';
+import thunk from "redux-thunk";
+import rootReducer from "../reducers";
 
 // Aplique o middleware
-const store = createStore(
-  rootReducer,
-);
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 export default store;
